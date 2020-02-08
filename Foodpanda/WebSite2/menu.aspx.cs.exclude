@@ -1,0 +1,97 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Data;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class menu : System.Web.UI.Page
+{
+/*    protected void Page_Load(object sender, EventArgs e)
+    {
+        string rname = Request.QueryString["r_name"] as string;
+        string findres = "select * from RESTAURANT where R_NAME='" + rname+ "'";
+        //Label1.Text = findres;
+        SqlDataSource2.SelectCommand = findres;
+        SqlDataSource2.SelectCommandType = SqlDataSourceCommandType.Text;
+        DataView dv = SqlDataSource2.Select(DataSourceSelectArguments.Empty) as DataView;
+         string r = (dv.Table.Rows[0]["R_ID"]).ToString();
+        
+        string findmenu = "select * from FOOD where R_ID=" + r ;
+        Label1.Text = "Menu of "+rname+" :";
+        SqlDataSource1.SelectCommand = findmenu;
+        SqlDataSource1.SelectCommandType = SqlDataSourceCommandType.Text;
+    }
+
+    protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        string rid, it_id, it_name, it_desc, it_price;
+        rid = GridView1.Rows[GridView1.SelectedIndex].Cells[0].Text;
+        it_id = GridView1.Rows[GridView1.SelectedIndex].Cells[1].Text;
+
+        it_name = GridView1.Rows[GridView1.SelectedIndex].Cells[2].Text;
+
+        it_desc= GridView1.Rows[GridView1.SelectedIndex].Cells[3].Text;
+
+        it_price = GridView1.Rows[GridView1.SelectedIndex].Cells[5].Text;
+        DropDownList d=GridView1.Rows[GridView1.SelectedIndex].Cells[4].FindControl("DropDownList1") as DropDownList ;
+       //TextBox t = GridView1.Rows[GridView1.SelectedIndex].Cells[4].FindControl("TextBox1") as TextBox;
+        string amount=d.SelectedItem.Text;
+       
+       
+            //Label3.Text =Label3.Text + rid + it_id + it_name + it_desc + it_price + amount;
+        
+       /*createcart c = new createcart(rid, it_id, it_name, it_desc, it_price);
+        List<createcart> clist = Session["clist"] as List<createcart>;
+        if (clist == null)
+        {
+            clist = new List<createcart>();
+        }
+        clist.Add(c);
+        createcart cc;
+        Session["clist"] = clist;
+        int count = clist.Count;
+        //Label3.Text = count.ToString() ;
+        int i ;
+        for (i = 0; i < count; i++)
+        {
+            cc=clist.ElementAt(i);
+           Label3.Text=cc.ITEMID;
+        }
+    }
+
+
+    /*protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+        if (e.CommandName == "cart")
+        {
+            int index = Convert.ToInt32(e.CommandArgument);
+            GridViewRow selectedRow = GridView1.Rows[index];
+            TableCell contactName = selectedRow.Cells[0];
+            string rid = contactName.Text;
+            contactName = selectedRow.Cells[1];
+            string it_id = contactName.Text;
+            contactName = selectedRow.Cells[2];
+            string it_name = contactName.Text;
+            contactName = selectedRow.Cells[3];
+            string it_desc = contactName.Text;
+            contactName = selectedRow.Cells[4];
+            string it_price = contactName.Text;  //Label2.Text = "You selected " + rid+it_id+it_name +it_price +".";
+            createcart c = new createcart(rid, it_id, it_name, it_desc, it_price);
+            List<createcart> clist = Session["clist"] as List<createcart>;
+            if (clist == null)
+            {
+                clist = new List<createcart>();
+            }
+            clist.Add(c);
+            Session["clist"] = clist;
+        }
+    }*/
+    protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
+    
+}
+

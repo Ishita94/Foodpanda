@@ -1,0 +1,113 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="menu.aspx.cs" Inherits="menu" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <style type="text/css">
+        .style1
+        {
+            width: 757px;
+        }
+        .style2
+        {
+            width: 757px;
+            height: 411px;
+        }
+        .style3
+        {
+            height: 411px;
+            width: 187px;
+        }
+        .style4
+        {
+            width: 757px;
+            height: 57px;
+        }
+        .style5
+        {
+            height: 57px;
+            width: 187px;
+        }
+        .style6
+        {
+            width: 187px;
+        }
+    </style>
+</head>
+<body background="deliveryhero-foodpanda%20-%20Copy1.jpg">
+    <form id="form1" runat="server">
+    <div>
+    
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+            ConnectionString="<%$ ConnectionStrings:ConnectionString4 %>" 
+            ProviderName="<%$ ConnectionStrings:ConnectionString4.ProviderName %>" 
+            SelectCommand="select * from FOOD"></asp:SqlDataSource>
+        <br />
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
+            ConnectionString="<%$ ConnectionStrings:ConnectionString2 %>" 
+            ProviderName="<%$ ConnectionStrings:ConnectionString2.ProviderName %>" 
+            SelectCommand="select * from RESTAURANT"></asp:SqlDataSource>
+        <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+        <br />
+        <br />
+    
+    </div>
+    <table style="width:100%;">
+        <tr>
+            <td align="center" class="style4">
+                <br />
+<br />
+                <asp:Label ID="Label1" runat="server" BackColor="#009900" Font-Bold="True" 
+                    Font-Size="XX-Large" ForeColor="White" Text="Label"></asp:Label></td><td align="center" 
+                                    class="style5"></td>
+        </tr>
+        <tr>
+            <td align="center" class="style6"><br />
+                <br />
+                <br />
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
+                    DataKeyNames="ITEM_ID" DataSourceID="SqlDataSource1" EnableViewState="False" 
+                    onselectedindexchanged="GridView1_SelectedIndexChanged" 
+                    style="margin-right: 52px; margin-top: 0px;" Width="866px" Font-Names="Aharoni" 
+                                        GridLines="None"><RowStyle BackColor="#FFFFCC" Font-Size="Larger" /><Columns>
+                        <asp:BoundField DataField="R_ID" HeaderText="RESTAURANT ID" 
+                            SortExpression="R_ID">
+                        <ItemStyle BackColor="#999999" Font-Bold="True" ForeColor="Red" 
+                            HorizontalAlign="Center" VerticalAlign="Middle" Font-Size="Larger" /></asp:BoundField>
+                        <asp:BoundField DataField="ITEM_ID" HeaderText="ITEM ID" ReadOnly="True" 
+                            SortExpression="ITEM_ID">
+                        <ItemStyle Font-Bold="True" ForeColor="#000066" />
+                        </asp:BoundField>
+
+                        <asp:BoundField DataField="ITEM_NAME" HeaderText="ITEM NAME" 
+                            SortExpression="ITEM_NAME">
+                        <ItemStyle BackColor="#99FF33" Font-Bold="True" Font-Size="Large" 
+                            HorizontalAlign="Center" /></asp:BoundField>
+                        <asp:BoundField DataField="ITEM_TYPE" HeaderText="ITEM DESCRIPTION" 
+                            SortExpression="ITEM_TYPE">
+                        <ItemStyle HorizontalAlign="Center" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="PRICE" HeaderText="PRICE(TK)" 
+                            SortExpression="PRICE" />
+                        <asp:TemplateField HeaderText="NUMBER OF ITEM"><ItemTemplate><asp:DropDownList ID="DropDownList1" 
+                                                        runat="server"><asp:ListItem>1</asp:ListItem><asp:ListItem>2</asp:ListItem><asp:ListItem>3</asp:ListItem></asp:DropDownList></ItemTemplate><HeaderStyle 
+                                                    BackColor="#FF9900" Font-Bold="True" /></asp:TemplateField><asp:CommandField 
+                                                ButtonType="Image" HeaderImageUrl="~/Samurai-Add-to-Cart.png" 
+                                                SelectImageUrl="~/shop-cart-add-icon.png" ShowSelectButton="True"><ItemStyle 
+                                                BackColor="#B5E61D" HorizontalAlign="Center" VerticalAlign="Middle" /></asp:CommandField></Columns>
+                    <HeaderStyle 
+                                            BackColor="#FF9900" BorderColor="#3333CC" BorderStyle="Solid" 
+                        Font-Names="Aharoni" Font-Size="Larger" /><EditRowStyle BackColor="#99FF99" /><AlternatingRowStyle 
+                                            BackColor="#CCFF99" BorderColor="#CCFF99" BorderStyle="None" /></asp:GridView>
+            </td>
+        <td align="center" class="style3"><asp:Panel ID="Panel1" runat="server" BackColor="#FFFF66" Height="316px" 
+                                        HorizontalAlign="Left"><asp:Panel ID="Panel2" runat="server" BackColor="Black" 
+                                            ForeColor="#FF5050"><asp:Label ID="Label4" runat="server" Font-Bold="True" 
+                                                Font-Size="Larger" ForeColor="White" Text="YOU HAVE IN YOUR CART:"></asp:Label><br /><br /></asp:Panel><br /><br /><br /><br /><table 
+                                            style="width:100%;"><tr><td colspan="3"><asp:Label ID="Label3" runat="server" 
+                                                    Font-Names="Aharoni" Font-Size="Large"></asp:Label></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table></asp:Panel></td>
+        </tr>
+    <tr>
+            <td align="center" class="style1">&nbsp;</td><td align="center" class="style6">&nbsp;</td></tr></table></form></body></html>

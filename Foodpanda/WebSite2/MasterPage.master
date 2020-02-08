@@ -1,0 +1,145 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            height: 26px;
+        }
+        .style29
+        {
+            width: 404px;
+        }
+        .style33
+        {
+            width: 125px;
+        }
+        .style34
+        {
+            width: 187px;
+        }
+        .style35
+        {
+            width: 97px;
+        }
+        .style36
+        {
+            height: 35px;
+        }
+    </style>
+</head>
+<body background="deliveryhero-foodpanda%20-%20Copy1.jpg">
+    <form id="form1" runat="server">
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
+    <table style="width:100%;">
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style1">
+            </td>
+            <td class="style1">
+            </td>
+            <td class="style1">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td align="center">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+    </table>
+    <table style="width:100%;">
+        <tr>
+            <td class="style36" colspan="5">
+                &nbsp;</td>
+            <td class="style36">
+            </td>
+        </tr>
+        <tr>
+            <td class="style29" colspan="4">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style29" colspan="4">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style29" colspan="2">
+                &nbsp;</td>
+            <td class="style29" colspan="2">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style29" colspan="4">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style29" colspan="4">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style29" colspan="4">
+    <div style="width: 161px">
+    </div>
+            </td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style33">
+                &nbsp;</td>
+            <td class="style34">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+            </td>
+            <td class="style35">
+                &nbsp;</td>
+            <td class="style29">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>
